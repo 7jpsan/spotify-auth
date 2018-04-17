@@ -16,8 +16,8 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
-    "flatModuleOutFile": "quickstart-lib.js",
-    "flatModuleId": "quickstart-lib",
+    "flatModuleOutFile": "spotify-auth.js",
+    "flatModuleId": "spotify-auth",
     "genDir": "../../out-tsc/lib-gen-dir/"
   }
 }

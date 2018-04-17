@@ -1,4 +1,4 @@
-# Angular QuickStart Lib
+# Angular Spotify Auth
 
 This is a simple library quickstart for Angular libraries, implementing the
 [Angular Package Format v4.0](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/edit#heading=h.k0mh3o8u5hx).

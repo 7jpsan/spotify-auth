@@ -50,7 +50,7 @@
         defaultExtension: 'js',
         main: 'index'
       },
-      'quickstart-lib': {
+      'spotify-auth': {
         main: 'index.js',
         defaultExtension: 'js',
         meta: {

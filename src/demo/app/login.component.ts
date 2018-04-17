@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService, ScopesBuilder, AuthConfig, TokenService } from 'quickstart-lib';
+import { AuthService, ScopesBuilder, AuthConfig, TokenService } from 'spotify-auth';
 import { Router } from '@angular/router';
-
-
 
 @Component({
   selector: 'app-login',
@@ -66,7 +64,7 @@ export class LoginComponent implements OnInit {
   }
 
   public login(): void {
-    const scopes = new ScopesBuilder().withScopes(ScopesBuilder.LIBRARY).build();
+    const scopes = new ScopesBuilder()/* .withScopes(ScopesBuilder.LIBRARY) */.build();
     const ac: AuthConfig = {
       client_id: "d6f49ff0fc1c4d1098c82a61ba8bb7ec",  // WebPortal App Id. Shoud be config
       response_type: "token",

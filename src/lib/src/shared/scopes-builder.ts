@@ -68,9 +68,8 @@ export class ScopesBuilder {
       if(typeof(scope) === 'string'){
         buffer.push(scope);
       }else{
-        Object.keys(scope).forEach((property) => scope[property] );
+        Object.keys(scope).forEach((property) => buffer.push(scope[property]));
       }
-
     });
 
     return buffer.join(' ');

@@ -1,12 +1,15 @@
 <ul>
   <li>
-    <a (click)="getUserInfo($event)" routerLink="user">User Info</a>
+    <a routerLink="user">User Info</a>
+  </li>
+  <li>
+    <a routerLink="albums">Albums Info</a>
   </li>
   <li>
     <a routerLink="login">Login with SpotifyAuth</a>
   </li>
   <li>
-    <a (click)="logout()">Logout</a>
+    <a (click)="logout($event)">Logout</a>
   </li>
 </ul>
 <hr>

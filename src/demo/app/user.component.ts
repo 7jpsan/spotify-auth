@@ -1,10 +1,11 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { InfoService } from './info.service';
 import { isEmpty } from 'lodash';
-import { TokenService } from 'quickstart-lib';
+import { TokenService } from 'spotify-auth';
 import { take } from 'rxjs/operators/take';
 import { switchMap } from 'rxjs/operators/switchMap';
 import { Observable } from 'rxjs/Observable';
+import { empty } from 'rxjs/observable/empty';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
@@ -29,13 +30,10 @@ export class UserComponent implements OnInit , OnDestroy{
   }
   ngOnInit(): void {
    
-    const stream = this.tokenSvc.authTokens.pipe(switchMap(() => this.infoSvc.getUserInfo()));
+    const stream = this.tokenSvc.authTokens.pipe(switchMap((x) => {
+        return this.infoSvc.fetchUserInfo();
+    }));
     this.stream = stream.subscribe((x) => this.user = x);
-    // this.tokenSvc.authTokens.subscribe(() => {
-    //   this.infoSvc.getUserInfo().subscribe( y => {
-    //     this.user = y;
-    //   });
-    // }); 
   }
 
 

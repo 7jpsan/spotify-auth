@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { LibService, AuthService, ScopesBuilder, AuthConfig, TokenService } from 'quickstart-lib';
+import { Component } from '@angular/core';
+import { AuthService, ScopesBuilder, AuthConfig, TokenService } from 'spotify-auth';
 import { InfoService } from './info.service';
-// import { AuthService } from 'quickstart-lib';
 
 @Component({
   selector: 'demo-app',
@@ -32,7 +31,8 @@ import { InfoService } from './info.service';
   }
   
   li a:hover {
-      background-color: #111;
+      cursor: pointer;
+      background-color: #1db26b;
   }
   
   .active {
@@ -41,19 +41,12 @@ import { InfoService } from './info.service';
     `
   ]
 })
-export class AppComponent implements OnInit {
-  
-  ngOnInit(): void {
-    //console.log(`AuthToken: ${this.tokenSvc.oAuthToken}`);
-  }
-  meaning: number;
+export class AppComponent {
+
   constructor(
     private infoSvc: InfoService,
     private tokenSvc: TokenService,
-    private libService: LibService, 
-    private authService: AuthService) {
-    this.meaning = libService.getMeaning();
-  }
+    private authService: AuthService) {}
 
   public getUserInfo(): void{
   }

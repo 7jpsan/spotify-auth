@@ -2,33 +2,31 @@ import { NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule, Routes, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
-import { LibComponent } from './component/lib.component';
-import { LibService } from './service/lib.service';
+import { SpotifyAuthComponent } from './component/spotify-auth.component';
 import { AuthService } from './service/auth.service';
 import { TokenService } from './service/token.service';
 import { AuthGuard } from './service/auth.guard';
-import { AuthInterceptor } from './service/auth.interceptor';
+import { SpotifyAuthInterceptor } from './service/spotify-auth.interceptor';
 
 const routes: Routes= [{
   path: 'authorized',
   canActivate: [ AuthGuard ],
-  component: LibComponent
+  component: SpotifyAuthComponent
 }];
 
 @NgModule({
-  declarations: [LibComponent],
+  declarations: [SpotifyAuthComponent],
   providers: [
-    LibService,
     AuthService,
     TokenService,
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor, //Force interception.
+      useClass: SpotifyAuthInterceptor, //Force interception.
       multi: true
     }
   ],
-  exports: [LibComponent, RouterModule],
+  exports: [RouterModule],
   imports: [RouterModule.forChild(routes)]
 })
-export class LibModule { }
+export class SpotifyAuthModule { }

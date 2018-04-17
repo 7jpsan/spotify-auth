@@ -13,7 +13,8 @@ import { Router } from '@angular/router';
 @Injectable()
 export class InfoService {
 
-  private apiUrl: string = 'https://api.spotify.com/v1/me';
+  private apiUserUrl: string = 'https://api.spotify.com/v1/me';
+  private apiAlbumsUrl: string = 'https://api.spotify.com/v1/me/albums';
 
   private user: {} = {};
   private user$: BehaviorSubject<{}>;
@@ -24,13 +25,21 @@ export class InfoService {
     this.user$ = new BehaviorSubject<{}>(this.user);
   }
 
-  public getUserInfo(): Observable<{}> {
-    return this.http.get(this.apiUrl).pipe(
+  public fetchUserInfo(): Observable<{}> {
+    return this.http.get(this.apiUserUrl).pipe(
       tap((user: {}) => {
         this.user$.next(this.user); 
       }),
-      tap(response => console.log(`tried`, response)),
       catchError(this.handleError('getSelf'))
+    );
+  }
+
+  public fetchUserAlbums(): Observable<{}>{
+    return this.http.get(this.apiAlbumsUrl).pipe(
+      tap((user: {}) => {
+        this.user$.next(this.user); 
+      }),
+      catchError(this.handleError('getSelfAlbums'))
     );
   }
 
@@ -40,20 +49,8 @@ export class InfoService {
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-
-      // TODO: send the error to remote logging infrastructure
-      //console.error(error); // log to console instead
-
-      // TODO: better job of transforming error for user consumption
-      //console.log(`${operation} failed: ${error.message}`);
-
-      // Let the app keep running by returning an empty result.
-      // this.user = new User({ isLoggedIn: false, token: '' } as User);
-      // this.user.setLoggedIn(false);
-      // this.cookieSvc.delete('spotify-user');
       (result as any) = error;
       return of(result as T);
-
     };
   }
 

@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Route, ActivatedRouteSnapshot, ActivatedRoute, RouterStateSnapshot, CanActivateChild } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-
-import { SpotifyAuthResponse } from '../shared/spotify-auth-response.i';
-//import { LoginService } from './login.service';
-
+import { CanActivate, Route, ActivatedRouteSnapshot, ActivatedRoute, RouterStateSnapshot, CanActivateChild, Router } from '@angular/router';
 import { fromPairs } from 'lodash';
+
 import { AuthService } from './auth.service';
 import { TokenService } from './token.service';
+import { SpotifyAuthResponse } from '../shared/spotify-auth-response.i';
 
 @Injectable()
 export class AuthGuard implements CanActivate, CanActivateChild {
@@ -19,14 +17,11 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     return this.canActivateChild(next, state);
   }
 
-  // This gets called when the callback is invoked. Token is part of Auth
   public canActivateChild(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean{
     const response = this.extractApiResponse(next.fragment);
     if(response){
       this.tokenSvc.setAuthToken(response);
     }
-    window["TS"] = this.tokenSvc;
-    console.log(window["TS"])
     return !!response;
   }
 

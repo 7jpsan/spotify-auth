@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-// import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import { AuthConfig } from '../shared/spotify-auth-config.i';
 import { SpotifyAuthResponse } from '../shared/spotify-auth-response.i';
 import { ScopesBuilder } from '../shared/scopes-builder';
