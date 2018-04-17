@@ -1,0 +1,13 @@
+<ul>
+  <li>
+    <a (click)="getUserInfo($event)" routerLink="user">User Info</a>
+  </li>
+  <li>
+    <a routerLink="login">Login with SpotifyAuth</a>
+  </li>
+  <li>
+    <a (click)="logout()">Logout</a>
+  </li>
+</ul>
+<hr>
+<router-outlet></router-outlet>
