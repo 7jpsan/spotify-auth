@@ -1,12 +1,13 @@
 {
   "name": "spotify-auth",
-  "version": "1.0.2",
-  "description": "Library spotify-auth package.json from the documentation, supplemented with testing support",
+  "version": "1.0.4",
+  "description": "Library spotify-auth for angular 5",
   "main": "./bundles/spotify-auth.umd.js",
   "module": "./spotify-auth.es5.js",
   "es2015": "./spotify-auth.js",
   "typings": "./spotify-auth.d.ts",
-  "author": "",
+  "author": "7jpsan",
+  "homepage": "https://github.com/7jpsan/spotify-auth#angular-spotify-auth",
   "license": "MIT",
   "repository": {},
   "engines": {
@@ -37,7 +38,8 @@
     "release": "standard-version"
   },
   "peerDependencies": {
-    "@angular/core": ">=5.0.0 <6.0.0"
+    "@angular/core": ">=5.0.0 <6.0.0",
+    "rxjs": "^5.5.2"
   },
   "devDependencies": {
     "@angular/common": "^5.0.0",
