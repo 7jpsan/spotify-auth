@@ -64,8 +64,8 @@ return Promise.resolve()
       external: [
         // List of dependencies
         // See https://github.com/rollup/rollup/wiki/JavaScript-API#external for more.
-        '@angular/core',
-        '@angular/router',
+        //'@angular/core',
+        //'@angular/router',
         'lodash',
         '@types/lodash'
       ],

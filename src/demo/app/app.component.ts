@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService, ScopesBuilder, AuthConfig, TokenService } from 'spotify-auth';
 import { InfoService } from './info.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'demo-app',
@@ -46,12 +47,15 @@ export class AppComponent {
   constructor(
     private infoSvc: InfoService,
     private tokenSvc: TokenService,
-    private authService: AuthService) {}
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   public getUserInfo(): void{
   }
 
   public logout(): void{
     this.tokenSvc.clearToken();
+    this.router.navigate(['login']);
   }
 }

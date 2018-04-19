@@ -10,7 +10,7 @@ export class AuthService {
   private requestAuthUrl = 'https://accounts.spotify.com/authorize';
   
   private authConfig: AuthConfig = { 
-    client_id: "ffffffffffffffffffffffffffffffff",  // WebPortal App Id. Shoud be config
+    client_id: "3af5f43840144db2a5ef883b56c5fb7e",  // WebPortal App Id. Shoud be config
     response_type: "token",
     redirect_uri: "http://localhost:3000/authorized",  // My URL
     state: "",

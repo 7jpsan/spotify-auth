@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { RouterModule, Routes, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { SpotifyAuthComponent } from './component/spotify-auth.component';
 import { AuthService } from './service/auth.service';

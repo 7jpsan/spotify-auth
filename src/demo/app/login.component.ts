@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
   public login(): void {
     const scopes = new ScopesBuilder()/* .withScopes(ScopesBuilder.LIBRARY) */.build();
     const ac: AuthConfig = {
-      client_id: "d6f49ff0fc1c4d1098c82a61ba8bb7ec",  // WebPortal App Id. Shoud be config
+      client_id: "3af5f43840144db2a5ef883b56c5fb7e",  // WebPortal App Id. Shoud be config
       response_type: "token",
       redirect_uri: "http://localhost:3000/authorized",  // My URL
       state: "",

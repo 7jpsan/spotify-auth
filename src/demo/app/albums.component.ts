@@ -1,9 +1,8 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { InfoService } from './info.service';
 import { omit } from 'lodash';
 import { isEmpty } from 'lodash';
 import { TokenService } from 'spotify-auth';
-import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({

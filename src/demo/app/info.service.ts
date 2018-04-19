@@ -3,12 +3,10 @@ import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators/catchError';
-import { map } from 'rxjs/operators/map';
 import { tap } from 'rxjs/operators/tap';
 import { of } from 'rxjs/observable/of';
 
 import { Router } from '@angular/router';
-//import { CookieService } from 'ngx-cookie-service';
 
 @Injectable()
 export class InfoService {
