@@ -1,6 +1,6 @@
 
 # Demo
-https://7jpsan.github.io/spotify-auth-demo/
+https://7jpsan.github.io/spotify-auth-demo/ (https://github.com/7jpsan/spotify-auth-demo)
 
 
 # Spotify Auth - Angular 5
