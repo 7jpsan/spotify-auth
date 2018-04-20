@@ -1,12 +1,10 @@
-import { NgModule } from '@angular/core';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { Routes } from '@angular/router';
 
 import { SpotifyAuthComponent } from './component/spotify-auth.component';
 import { AuthService } from './service/auth.service';
 import { TokenService } from './service/token.service';
 import { AuthGuard } from './service/auth.guard';
-import { SpotifyAuthInterceptor } from './service/spotify-auth.interceptor';
 
 const routes: Routes= [{
   path: 'authorized',
@@ -16,17 +14,22 @@ const routes: Routes= [{
 
 @NgModule({
   declarations: [SpotifyAuthComponent],
-  providers: [
-    AuthService,
-    TokenService,
-    AuthGuard,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: SpotifyAuthInterceptor, //Force interception.
-      multi: true
-    }
-  ],
-  exports: [RouterModule],
-  imports: [RouterModule.forChild(routes)]
+  providers: []
 })
-export class SpotifyAuthModule { }
+export class SpotifyAuthModule { 
+
+  public static authRoutes(): Routes {
+    return routes;
+  }
+
+  public static forRoot() : ModuleWithProviders {
+    return {
+      ngModule: SpotifyAuthModule,
+      providers: [ 
+        AuthService,
+        TokenService,
+        AuthGuard
+      ]
+    }
+  }
+}

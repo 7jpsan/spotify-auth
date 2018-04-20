@@ -1,6 +1,6 @@
 {
   "name": "spotify-auth",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Library spotify-auth for angular 5",
   "main": "./bundles/spotify-auth.umd.js",
   "module": "./spotify-auth.es5.js",

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'spotify-auth',
@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
 })
 export class SpotifyAuthComponent implements OnInit {
   
-  public constructor(private router: Router){}
+  public constructor(private authService: AuthService){}
 
   public ngOnInit(): void {
     //Send it back to app home
-    this.router.navigate(['']); 
+    this.authService.authorized();
   }
 }

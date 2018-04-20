@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService, ScopesBuilder, AuthConfig, TokenService } from 'spotify-auth';
 import { InfoService } from './info.service';
 import { Router } from '@angular/router';
@@ -42,7 +42,7 @@ import { Router } from '@angular/router';
     `
   ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 
   constructor(
     private infoSvc: InfoService,
@@ -50,6 +50,12 @@ export class AppComponent {
     private authService: AuthService,
     private router: Router
   ) {}
+
+  ngOnInit(): void {
+    this.authService.authorizedStream.subscribe((x:boolean) => {
+      if(x){this.router.navigate["/"]}
+    });
+  }
 
   public getUserInfo(): void{
   }

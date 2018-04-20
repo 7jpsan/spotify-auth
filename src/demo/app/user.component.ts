@@ -33,7 +33,7 @@ export class UserComponent implements OnInit , OnDestroy{
     const stream = this.tokenSvc.authTokens.pipe(switchMap((x) => {
         return this.infoSvc.fetchUserInfo();
     }));
-    this.stream = stream.subscribe((x) => this.user = x);
+    this.stream = stream.subscribe((x:{}) => this.user = x);
   }
 
 

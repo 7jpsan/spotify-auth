@@ -30,7 +30,7 @@ public authMethod(): void {
       client_id: "xxxxxxxxxxxxxxxxxxxxxxxxxx",  // WebPortal App Id. Shoud be config
       response_type: "token",
       redirect_uri: "http://localhost:3000/authorized",  // URL you want to use. Currently it needs to have the authorized bit at the end. TODO: Change it
-      state: "",
+      state: "some_random_state",
       show_dialog: true,
       scope: scopes
     };

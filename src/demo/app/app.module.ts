@@ -5,10 +5,10 @@ import { SpotifyAuthModule } from 'spotify-auth';
 import { AppComponent }  from './app.component';
 import { InfoService }  from './info.service';
 import { Routes, RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './user.component';
 import { LoginComponent } from './login.component';
 import { AlbumsComponent } from './albums.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -34,7 +34,7 @@ const routes: Routes = [
   imports:      [ 
     BrowserModule,
     HttpClientModule,
-    SpotifyAuthModule,
+    SpotifyAuthModule.forRoot(),
     RouterModule.forRoot(routes)
   ],
   declarations: [ AppComponent, UserComponent, LoginComponent, AlbumsComponent ],
