@@ -1,7 +1,7 @@
 
 # Demo
-https://7jpsan.github.io/spotify-auth-demo/ (https://github.com/7jpsan/spotify-auth-demo)
-
+App: https://7jpsan.github.io/spotify-auth-demo/
+Repo: https://github.com/7jpsan/spotify-auth-demo/
 
 # Spotify Auth - Angular 5
 
@@ -144,6 +144,7 @@ Make sure you have at least Node 6.9 and NPM 3.0 installed.
 	export  class  AppModule {}
 	```
 
-That is it! The code should take care of the rest for you. Enjoy! There is a demo app in the package somewhere.
+That is it! The code should take care of the rest for you. Enjoy! There is a demo app here https://github.com/7jpsan/spotify-auth-demo.
+Ignore the one present in this repo. It was split, but never removed. Self TODO :)
 
 If anything goes wrong, please raise an issue!

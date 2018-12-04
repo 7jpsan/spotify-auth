@@ -4,17 +4,21 @@ All notable changes to this project will be documented in this file. See [standa
 
 <a name="2.0.4"></a>
 ## [2.0.4](https://github.com/7jpsan/spotify-auth/compare/v2.0.3...v2.0.4) (2018-12-04)
-
+  - Fix build. 
+  - Marked other versions as deprecated and removed 2.0.3 (completely wrong deployment)
+  - Fixed vulnerabilities issues that npm was warning for about 6months now.
+  - Tested with same app and no breaking change!! 
 
 
 <a name="2.0.3"></a>
 ## [2.0.3](https://github.com/7jpsan/spotify-auth/compare/v2.0.2...v2.0.3) (2018-12-04)
-
+  - Merged FOHelmstetter change for compatibility with newer rxjs. 
+  - Deployed the package in a broken form. Sorry. 
 
 
 <a name="2.0.2"></a>
 ## 2.0.2 (2018-12-04)
-
+  - No info
 
 
 <a name="2.0.1"></a>
