@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 <a name="2.0.5"></a>
 ## [2.0.5](https://github.com/7jpsan/spotify-auth/compare/v2.0.4...v2.0.5) (2018-12-04)
-
+  - Update README to point to correct demo app.
 
 
 <a name="2.0.4"></a>
