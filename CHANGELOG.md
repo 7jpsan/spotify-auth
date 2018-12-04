@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 <a name="2.0.6"></a>
 ## [2.0.6](https://github.com/7jpsan/spotify-auth/compare/v2.0.5...v2.0.6) (2018-12-04)
-
+  - Update package.json and package-lock.json to fix security issues.
 
 
 <a name="2.0.5"></a>
